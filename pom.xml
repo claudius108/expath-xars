@@ -3,55 +3,29 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<artifactId>base</artifactId>
-		<groupId>ro.kuberam.xars</groupId>
-		<version>0.0.1</version>
-	</parent>
-
 	<artifactId>base</artifactId>
-	<groupId>ro.kuberam.xars.expath-exist-demos</groupId>
-	<version>0.0.2</version>
+	<groupId>ro.kuberam.xars</groupId>
+	<version>0.0.3</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<package-name>http://expath.org/demos/exist/${project.artifactId}</package-name>
-		<package-abbrev>expath-${project.artifactId}-exist-demos</package-abbrev>
-		<package-type>application</package-type>
 		<unit-tests-dir-path>/home/claudius/workspaces/repositories/git/expath-exist/${project.artifactId}</unit-tests-dir-path>
 		<lib-dir-path>/home/claudius/workspaces/repositories/git/kuberam/libs/java/${project.artifactId}</lib-dir-path>
+		<package-final-name>${project.artifactId}-${project.version}</package-final-name>
 	</properties>
 
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>com.google.code.maven-replacer-plugin</groupId>
-					<artifactId>replacer</artifactId>
-					<version>1.5.2</version>
-					<executions>
-						<execution>
-							<id>filter-page.html</id>
-							<phase>generate-resources</phase>
-							<goals>
-								<goal>replace</goal>
-							</goals>
-							<configuration>
-								<file>${unit-tests-dir-path}/README.md</file>
-								<outputFile>${project.build.directory}/index.xml</outputFile>
-								<replacements>
-									<replacement>
-										<token>html</token>
-										<value>html</value>
-									</replacement>
-								</replacements>
-							</configuration>
-						</execution>
-					</executions>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>wagon-maven-plugin</artifactId>
+					<version>1.0-beta-4</version>
 				</plugin>
 				<plugin>
 					<groupId>ro.kuberam.maven.plugins</groupId>
 					<artifactId>kuberam-expath-plugin</artifactId>
+					<version>0.4.4</version>
 					<executions>
 						<execution>
 							<id>create-xar</id>
@@ -61,7 +35,7 @@
 							</goals>
 							<configuration>
 								<descriptor>assembly.xml</descriptor>
-								<finalName>expath-${project.artifactId}-exist-demos-${project.version}</finalName>
+								<finalName>${package-final-name}</finalName>
 							</configuration>
 						</execution>
 					</executions>
