@@ -10,7 +10,7 @@
 
 	<properties>
 		<unit-tests-dir-path>/home/claudius/workspaces/repositories/git/expath-exist/${project.artifactId}</unit-tests-dir-path>
-		<lib-dir-path>/home/claudius/workspaces/repositories/git/kuberam/libs/java/${project.artifactId}</lib-dir-path>
+		<lib-dir-path>/home/claudius/workspaces/repositories/git/${project.artifactId}-java-lib</lib-dir-path>
 		<package-final-name>${project.artifactId}-${project.version}</package-final-name>
 	</properties>
 
