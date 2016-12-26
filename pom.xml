@@ -25,7 +25,7 @@
 				<plugin>
 					<groupId>ro.kuberam.maven.plugins</groupId>
 					<artifactId>kuberam-expath-plugin</artifactId>
-					<version>0.4.5</version>
+					<version>0.4.6</version>
 					<executions>
 						<execution>
 							<id>create-xar</id>
