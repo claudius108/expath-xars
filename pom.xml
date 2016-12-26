@@ -5,11 +5,7 @@
 
 	<artifactId>base</artifactId>
 	<groupId>ro.kuberam.xars</groupId>
-<<<<<<< HEAD
 	<version>0.0.5</version>
-=======
-	<version>0.0.4</version>
->>>>>>> branch 'master' of https://github.com/claudius108/expath-xars.git
 	<packaging>pom</packaging>
 
 	<properties>
